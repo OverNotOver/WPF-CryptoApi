@@ -25,12 +25,9 @@ namespace WpfApp1
         {
             InitializeComponent();
             DataContext = new CryptoViewModel();
-             
-        }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+       
         }
+    
     }
 }

@@ -11,10 +11,10 @@ namespace WpfApp1.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public string Symbol { get; set; }
-        public double MakeCap { get; set; }
+        public string MakeCap { get; set; }
         public int Number { get; set; }
-        public decimal Price { get; set; }
-        public double PercentChange24h { get; set; }
+        public string Price { get; set; }
+        public string PercentChange24h { get; set; }
  
     }
 

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -44,17 +45,17 @@ namespace WpfApp1.ViewModels
                     crypto.Symbol = cryptoCurrenci["symbol"].ToString();
 
                     double cap = 0;
-                    if (cryptoCurrenci["quote"]["USD"]["market_cap"] != null && double.TryParse(cryptoCurrenci["quote"]["USD"]["market_cap"].ToString(), out cap)) crypto.MakeCap = cap;
-                    else crypto.MakeCap = 0;
+                    if (cryptoCurrenci["quote"]["USD"]["market_cap"] != null && double.TryParse(cryptoCurrenci["quote"]["USD"]["market_cap"].ToString(), out cap)) crypto.MakeCap = "$ " +Math.Round(cap, 3).ToString("N0", CultureInfo.InvariantCulture);
+                    else crypto.MakeCap = null;
                
 
                     decimal price = 0;           
-                    if (cryptoCurrenci["quote"]["USD"]["price"] != null && decimal.TryParse(cryptoCurrenci["quote"]["USD"]["price"].ToString(), out price)) crypto.Price = Math.Round(price, 4);
-                    else crypto.Price = 0;
+                    if (cryptoCurrenci["quote"]["USD"]["price"] != null && decimal.TryParse(cryptoCurrenci["quote"]["USD"]["price"].ToString(), out price)) crypto.Price = "$ " + Math.Round(price, 2).ToString();
+                    else crypto.Price = null;
 
                     double percent = 0;
-                    if(cryptoCurrenci["quote"]["USD"]["percent_change_24h"] != null && double.TryParse(cryptoCurrenci["quote"]["USD"]["percent_change_24h"].ToString(), out percent)) crypto.PercentChange24h = Math.Round(percent, 2);
-                    else crypto.PercentChange24h = 0;
+                    if(cryptoCurrenci["quote"]["USD"]["percent_change_24h"] != null && double.TryParse(cryptoCurrenci["quote"]["USD"]["percent_change_24h"].ToString(), out percent)) crypto.PercentChange24h = Math.Round(percent, 3).ToString() + "%";
+                    else crypto.PercentChange24h = null;
                        
             
                     cryptosList.Add(crypto);
