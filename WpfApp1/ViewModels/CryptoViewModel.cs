@@ -27,18 +27,7 @@ namespace WpfApp1.ViewModels
             LoadData();
         }
 
-        //public Crypto GetSearch(string nameCrypto)
-        //{
-        //    foreach (var item in cryptoViewModel.Cryptos)
-        //    {
-        //        if (item.Name == nameCrypto)
-        //        {
-        //            return item;
-        //        }
 
-        //    }
-        //    return null;
-        //}
 
         private async void LoadData()
         {
