@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -10,7 +11,7 @@ using WpfApp1.Model;
 
 namespace WpfApp1.ViewModels
 {
-    public class CryptoApiClient
+    public class CryptoApiCoinMarketCap
     {
         private static readonly HttpClient _HttpClient = new HttpClient();
 
@@ -70,5 +71,7 @@ namespace WpfApp1.ViewModels
                 return null;
             }
         }
+
+        
     }
 }

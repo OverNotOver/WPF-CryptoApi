@@ -15,6 +15,8 @@ namespace WpfApp1.Model
         public int Number { get; set; }
         public string Price { get; set; }
         public string PercentChange24h { get; set; }
+
+
  
     }
 

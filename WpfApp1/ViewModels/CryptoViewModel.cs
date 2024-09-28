@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Xml.Linq;
 using WpfApp1.Model;
 
@@ -17,15 +18,27 @@ namespace WpfApp1.ViewModels
 
         public ObservableCollection<Crypto> Cryptos { get; set; }
 
-        private readonly CryptoApiClient apiClient;
+        private readonly CryptoApiCoinMarketCap apiClient;
 
         public CryptoViewModel()
         {
             Cryptos = new ObservableCollection<Crypto>();
-            apiClient = new CryptoApiClient();
+            apiClient = new CryptoApiCoinMarketCap();
             LoadData();
         }
 
+        //public Crypto GetSearch(string nameCrypto)
+        //{
+        //    foreach (var item in cryptoViewModel.Cryptos)
+        //    {
+        //        if (item.Name == nameCrypto)
+        //        {
+        //            return item;
+        //        }
+
+        //    }
+        //    return null;
+        //}
 
         private async void LoadData()
         {
@@ -33,16 +46,26 @@ namespace WpfApp1.ViewModels
             int counter = 0;
 
             Cryptos.Clear();
-            foreach (var crypto in cryptoData)
+
+            if (cryptoData != null) 
             {
-                if (counter < 10)
+                foreach (var crypto in cryptoData)
                 {
-                    Cryptos.Add(crypto);
-                    counter++;
+                    if (true)
+                    {
+                        Cryptos.Add(crypto);
+                        counter++;
+                    }
+
                 }
-
-
             }
+            else
+            {
+                MessageBox.Show("Null");
+            }
+
+
+
         }
     }
 

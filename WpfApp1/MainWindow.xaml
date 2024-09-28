@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="750">
+        Title="CryptoInfo" Height="450" Width="750" ResizeMode="NoResize"> 
 
 
     <Grid ShowGridLines="True" >
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*" />
@@ -75,17 +76,17 @@
         </DataGrid>
 
         <WrapPanel Grid.Row="0" HorizontalAlignment ="Center">
-            <Button Width="100" Height="25" Margin="10">Пошук</Button>
+            <Button Width="100" Height="25" Margin="10" Click="Button_Click_3">Пошук</Button>
             <Button Width="100" Height="25" Margin="10">Графік</Button>
-            <Button Width="100" Height="25" Margin="10">Світла тема</Button>
-            <Button Width="100" Height="25" Margin="10">Темна тема</Button>
+            <!--<Button Width="100" Height="25" Margin="10" Click="Button_Click_2">Світла тема</Button>
+            <Button Width="100" Height="25" Margin="10" Click="Button_Click_1">Темна тема</Button>-->
             <Button Width="100" Height="25" Margin="10">Конвертувати</Button>
-            <Button Width="100" Height="25" Margin="10">Вихід</Button>
+            <Button Width="100" Height="25" Margin="10" Click="Button_Click">Вихід</Button>
         </WrapPanel>
-        
 
 
 
+        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 
 </Window>
