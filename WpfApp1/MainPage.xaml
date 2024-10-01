@@ -1,40 +1,44 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
-        mc:Ignorable="d"
-        Title="CryptoInfo" Height="450" Width="750" ResizeMode="NoResize"> 
-
+﻿<Page x:Class="WpfApp1.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
 
     <Grid ShowGridLines="True" >
-        
-        <!--<Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="343*"/>
+            <ColumnDefinition Width="57*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*" />
 
         </Grid.RowDefinitions>
 
         <DataGrid Grid.Row="1"             
-                  HorizontalAlignment="Center"  
-                  ColumnWidth="*"  
-                  IsReadOnly="True"  
-                  ItemsSource="{Binding Cryptos}" 
-                  AutoGenerateColumns="False" 
-                  CanUserAddRows="False" 
-                  Margin="17,15,17,18" 
-                  IsSynchronizedWithCurrentItem="True" 
-                  FontSize="18" FontFamily="Arial" 
-                  GridLinesVisibility="None" 
-                  HorizontalGridLinesBrush="#FF7AE9F1" 
-                  RenderTransformOrigin="0.5,0.5"
-                  SelectionMode="Single"
-                  HorizontalScrollBarVisibility="Hidden"
-                  SelectionUnit="FullRow" 
-                  BorderThickness="0"
-                  AlternatingRowBackground="#f2f2f2"
-                  RowBackground="White">
+              HorizontalAlignment="Left"  
+              ColumnWidth="*"  
+              IsReadOnly="True"  
+              ItemsSource="{Binding Cryptos}" 
+              AutoGenerateColumns="False" 
+              CanUserAddRows="False" 
+              Margin="17,15,0,18" 
+              IsSynchronizedWithCurrentItem="True" 
+              FontSize="18" FontFamily="Arial" 
+              GridLinesVisibility="None" 
+              HorizontalGridLinesBrush="#FF7AE9F1" 
+              RenderTransformOrigin="0.5,0.5"
+              SelectionMode="Single"
+              HorizontalScrollBarVisibility="Hidden"
+              SelectionUnit="FullRow" 
+              BorderThickness="0"
+              AlternatingRowBackground="#f2f2f2"
+              RowBackground="White" Grid.ColumnSpan="2">
 
             <DataGrid.Resources>
                 <Style TargetType="DataGridColumnHeader">
@@ -75,18 +79,15 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <WrapPanel Grid.Row="0" HorizontalAlignment ="Center">
-            <Button Width="100" Height="25" Margin="10" Click="Button_Click_3">Пошук</Button>
-            <Button Width="100" Height="25" Margin="10">Графік</Button>
-            --><!--<Button Width="100" Height="25" Margin="10" Click="Button_Click_2">Світла тема</Button>
-            <Button Width="100" Height="25" Margin="10" Click="Button_Click_1">Темна тема</Button>--><!--
+        <WrapPanel Grid.Row="0" HorizontalAlignment ="Left" Margin="220,0,0,0">
+            <Button Width="100" Height="25" Margin="10" Click="Button_Search">Пошук</Button>
+            <!--<Button Width="100" Height="25" Margin="10" Click="Button_Click_2">Світла тема</Button>
+        <Button Width="100" Height="25" Margin="10" Click="Button_Click_1">Темна тема</Button>-->
             <Button Width="100" Height="25" Margin="10">Конвертувати</Button>
-            <Button Width="100" Height="25" Margin="10" Click="Button_Click">Вихід</Button>
-        </WrapPanel>-->
+            <Button Width="100" Height="25" Margin="10" Click="Button_Close">Вихід</Button>
+        </WrapPanel>
 
 
 
-        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
-
-</Window>
+</Page>

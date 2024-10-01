@@ -1,5 +1,4 @@
-﻿using GalaSoft.MvvmLight.Messaging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,23 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp1.Model;
 using WpfApp1.ViewModels;
 
 namespace WpfApp1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainPage : Page
     {
-
-        public MainWindow()
+        public MainPage()
         {
             InitializeComponent();
-            MainFrame.Navigate(new MainPage());
-                 
+            DataContext = new CryptoViewModel();
         }
 
+
+        private void Button_Search(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Search(this.DataContext));
+        }
+
+        private void Button_Close(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
