@@ -25,6 +25,7 @@ namespace WpfApp1.ViewModels
             Cryptos = new ObservableCollection<Crypto>();
             apiClient = new CryptoApiCoinMarketCap();
             LoadData();
+
         }
 
 
@@ -56,6 +57,8 @@ namespace WpfApp1.ViewModels
 
 
         }
+
+
     }
 
 

@@ -37,5 +37,15 @@ namespace WpfApp1
         {
             Application.Current.Shutdown();
         }
+
+
+        private void Button_Сonvert(object sender, RoutedEventArgs e)
+        {
+            Window_convert window = new Window_convert(this.DataContext);
+            window.Width = 350;
+            window.Height = 200;
+            window.Show();
+            
+        }
     }
 }

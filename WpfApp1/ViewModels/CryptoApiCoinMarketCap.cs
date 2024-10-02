@@ -72,6 +72,6 @@ namespace WpfApp1.ViewModels
             }
         }
 
-        
+  
     }
 }

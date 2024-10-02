@@ -83,7 +83,7 @@
             <Button Width="100" Height="25" Margin="10" Click="Button_Search">Пошук</Button>
             <!--<Button Width="100" Height="25" Margin="10" Click="Button_Click_2">Світла тема</Button>
         <Button Width="100" Height="25" Margin="10" Click="Button_Click_1">Темна тема</Button>-->
-            <Button Width="100" Height="25" Margin="10">Конвертувати</Button>
+            <Button Width="100" Height="25" Margin="10" Click="Button_Сonvert">Конвертувати</Button>
             <Button Width="100" Height="25" Margin="10" Click="Button_Close">Вихід</Button>
         </WrapPanel>
 
